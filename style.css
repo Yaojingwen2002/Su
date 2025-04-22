@@ -1,0 +1,84 @@
+/* 基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    min-height: 100vh;
+    background: #1a1a1a;
+    color: #FFD700;
+    overflow: hidden;
+}
+
+/* 数字矩阵背景 */
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* 磨砂玻璃容器 */
+.container {
+    position: relative;
+    max-width: 800px;
+    margin: 20vh auto;
+    padding: 2rem;
+    background: rgba(255, 215, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 2px solid #FFD700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+/* 呼吸动画标题 */
+.title {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: breathe 3s ease-in-out infinite;
+}
+
+@keyframes breathe {
+    0%, 100% { opacity: 0.8; transform: scale(0.98); }
+    50% { opacity: 1; transform: scale(1); }
+}
+
+/* 输入框样式 */
+.input-group {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+input {
+    flex: 1;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid #FFD700;
+    color: #FFD700;
+    font-family: inherit;
+}
+
+button {
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        margin: 10vh 1rem;
+    }
+}
